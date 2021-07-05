@@ -1,4 +1,4 @@
-package base;
+package game_1024;
 
 public class Game {
     public static void main(String[] args) {

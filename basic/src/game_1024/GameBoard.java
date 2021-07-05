@@ -1,6 +1,4 @@
-package base;
-
-import org.w3c.dom.ls.LSInput;
+package game_1024;
 
 import java.util.Arrays;
 import java.util.Random;
