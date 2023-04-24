@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Ten {
     private TenBoard[] boards = new TenBoard[9];
-    private Board overBoard = new Board();
+    private Board overBoard = new Board();      // The high-level overall board.
     private int current_player = 1;
     private int focus = -1;
     public Ten(){
@@ -33,8 +33,8 @@ public class Ten {
             boarders[i] = "------------------";
         }
         if (this.focus != -1){
-            boarders[this.focus] = "@@@@@@@@@@@@@@@@@@";
-            boarders[this.focus + 3] = "@@@@@@@@@@@@@@@@@@";
+            boarders[this.focus] = "##################";
+            boarders[this.focus + 3] = "##################";
         }
         String boarder1 = "+" + boarders[0] + "+" + boarders[1] + "+" + boarders[2] + "+";
         String boarder2 = "+" + boarders[3] + "+" + boarders[4] + "+" + boarders[5] + "+";
@@ -60,12 +60,15 @@ public class Ten {
 
     public void play(){
         while (true){
-            if (boards[focus].get_owner() != 0){
+            if (this.overBoard.win()) {
+                System.out.println(overBoard.getWinnerWord());
+                break;
+            }
+            else if (boards[this.focus].get_owner() != 0){
                 this.choose_board();
             }
             else{
                 boards[this.focus].step(this.current_player, boards[this.focus].get_step());
-
                 boards[this.focus].conquer(this.current_player);
                 this.overBoard.step(boards[this.focus].get_owner(), this.focus);
                 this.current_player = - this.current_player;

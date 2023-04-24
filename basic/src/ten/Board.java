@@ -7,11 +7,12 @@ public class Board {
     int current_player = 1;
 
     int last_step = -1;
-    String winner_word = "This winner is player %d ";
+    String winner_word = "The winner is player %d ";
 
     public Board(){
-        System.out.println("Board init!");
+        this.print_init();
     }
+    private void print_init() {}
     public void game() {
 
         this.display();
@@ -36,9 +37,14 @@ public class Board {
     public int get_step(){
         Scanner sc = new Scanner(System.in);
         int idx = -1;
-        while(idx < 1 || idx > 9 || this.grid[(2 - (idx - 1) / 3) * 3 + (idx - 1) % 3] != 0){
-            System.out.println("Your step > ");
+        String player = this.current_player == 1 ? "A" : "B";
+        while(true){
+            System.out.println(String.format("Player %s step > (Any digit)", player));
             idx = sc.nextInt();
+            if (idx < 1 || idx > 9 || this.grid[(2 - (idx - 1) / 3) * 3 + (idx - 1) % 3] != 0) {
+                System.out.println("Invalid step!!");
+            }
+            else break;
         }
         return (2 - (idx - 1) / 3) * 3 + (idx - 1) % 3;
     }
@@ -80,10 +86,13 @@ public class Board {
                 }
             }
             if (flag) {
-                System.out.println(String.format(winner_word, candidate));
+//                System.out.println(String.format(winner_word, candidate));
                 return true;
             }
         }
         return false;
+    }
+    public String getWinnerWord() {
+        return this.winner_word;
     }
 }

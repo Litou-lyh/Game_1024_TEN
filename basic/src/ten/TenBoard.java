@@ -7,6 +7,10 @@ public class TenBoard extends Board {
 
     public TenBoard(){
         this.winner_word = "Place conquered by player %d ";
+//        this.print_init();
+    }
+
+    private void print_init() {
         System.out.println("TenBoard init!");
     }
 
@@ -21,6 +25,8 @@ public class TenBoard extends Board {
     public void conquer(int player){
         if (win()) {
             this.owner = player;
+            String p = this.current_player == 1 ? "A" : "B";
+            System.out.println(String.format("Place conquered by player %s !!", p));
         }
     }
 

@@ -3,7 +3,7 @@ package game_1024;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
-//import java.lang.Math;
+import java.lang.Math;
 
 public class GameBoard {
     int[] grid;
@@ -33,12 +33,12 @@ public class GameBoard {
     public void generate(int range){
         Random ran = new Random(System.currentTimeMillis());
         Random rand = new Random(System.currentTimeMillis());
-        int a = ran.nextInt(8192 + score);
-        int new_value = 1;
+        int a = ran.nextInt(score*2);
+        int new_value = (int) Math.pow(2, Math.floor(Math.log(this.score) / Math.log(2))/4-1);
         if (a < score){
-            new_value = 2;
+            new_value = (int) Math.pow(2, Math.floor(Math.log(this.score) / Math.log(2))/4);
         }
-
+        System.out.println(new_value);
         int next = rand.nextInt(range);
         grid[free_list[next]] = new_value;
     }
