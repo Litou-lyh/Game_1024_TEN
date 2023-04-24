@@ -13,11 +13,11 @@
 
 ## Example of 1024:
 
-![image-20230423194257413](image-20230423194257413.png?raw=true)
+![image-20230423194257413](assets\image-20230423194257413.png?raw=true)
 
 ### I choose to slide leftwards, two 4s add up to 8 in the second row, two 1s add up to 2 in the last row. Other numbers just slide leftwards as if there is a gravity source.
 
-![image-20230423194156043](image-20230423194156043.png)
+![image-20230423194156043](assets\image-20230423194156043.png)
 
 
 
@@ -45,17 +45,17 @@
 
 ### Note: Number 1-9 in the number keyboard is corresponding to the grids.
 
-![image-20230423200516237](image-20230423200516237.png)
+![image-20230423200516237](assets\image-20230423200516237.png)
 
 
 
-![image-20230423200539044](image-20230423200539044.png)
+![image-20230423200539044](assets\image-20230423200539044.png)
 
 
 
-![image-20230423200632729](image-20230423200632729.png)
+![image-20230423200632729](assets\image-20230423200632729.png)
 
 ### Note: If player B conquer a board, the overview in the right will display the updated result. Player A is then free to choose a new board to continue.
 
-![image-20230423200708634](image-20230423200708634.png)
+![image-20230423200708634](assets\image-20230423200708634.png)
 
